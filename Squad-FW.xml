@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SquadList>
+    <Squad number= "No.9">
+        <name>Christian Benteke</name>
+        <nation>Democratic Republic of the Congo</nation>
+        <picture>Christian%20Benteke.PNG</picture>
+    </Squad>
+	<Squad number= "No.11">
+        <name>Roberto Firmino</name>
+        <nation>Brazil</nation>
+        <picture>Roberto%20Firmino.PNG</picture>
+    </Squad>
+	<Squad number= "No.15">
+        <name>Daniel Sturridge</name>
+        <nation>England</nation>
+        <picture>Daniel%20Sturridge.PNG</picture>
+    </Squad>
+	<Squad number= "No.27">
+        <name>Divock Orige</name>
+        <nation>Belgium</nation>
+        <picture>Divock%20Orige.PNG</picture>
+    </Squad>  
+    <Squad number= "No.28">
+        <name>Danny Ings</name>
+        <nation>England</nation>
+        <picture>Danny%20Ings.PNG</picture>
+    </Squad>
+	<Squad number= "No.48">
+        <name>Jerome Sinclair</name>
+        <nation>England</nation>
+        <picture>Jerome%20Sinclair.PNG</picture>
+    </Squad>
+</SquadList>

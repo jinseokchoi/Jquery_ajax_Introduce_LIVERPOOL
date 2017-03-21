@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SquadList>
+    <Squad number= "No.2">
+        <name>Nathaniel Clyne</name>
+        <nation>England</nation>
+        <picture>Nathaniel%20Clyne.PNG</picture>
+    </Squad>
+	<Squad number= "No.3">
+        <name>Jose Enrique</name>
+        <nation>Spain</nation>
+        <picture>Jose%20Enrique.PNG</picture>
+    </Squad>
+	<Squad number= "No.4">
+        <name>Kolo Toure</name>
+        <nation>Republic of Coted'lvoire</nation>
+        <picture>Kolo%20Toure.PNG</picture>
+    </Squad>
+	<Squad number= "No.6">
+        <name>Dejan Lovren</name>
+        <nation>Croatia</nation>
+        <picture>Dejan%20Lovren.PNG</picture>
+    </Squad>
+    <Squad number= "No.12">
+        <name>Joe Gomez</name>
+        <nation>England</nation>
+        <picture>Joe%20Gomez.PNG</picture>
+    </Squad>
+    <Squad number= "No.17">
+        <name>Mamadou Sakho</name>
+        <nation>France</nation>
+        <picture>Mamadou%20Sakho.PNG</picture>
+    </Squad>
+    <Squad number= "No.18">
+        <name>Alberto Moreno</name>
+        <nation>Spain</nation>
+        <picture>Alberto%20Moreno.PNG</picture>
+    </Squad>
+    <Squad number= "No.19">
+        <name>Steven Caulker</name>
+        <nation>England</nation>
+        <picture>Steven%20Caulker.PNG</picture>
+    </Squad>
+    <Squad number= "No.26">
+        <name>Tiago Ilori</name>
+        <nation>England</nation>
+        <picture>Tiago%20Ilori.PNG</picture>
+    </Squad>
+    <Squad number= "No.37">
+        <name>Martin Skrtel</name>
+        <nation>Slovakia</nation>
+        <picture>Martin%20Skrtel.PNG</picture>
+    </Squad>
+    <Squad number= "No.38">
+        <name>Jon Flanagan</name>
+        <nation>England</nation>
+        <picture>Jon%20Flanagan.PNG</picture>
+    </Squad>
+    <Squad number= "No.43">
+        <name>Ryan Mclaughlin</name>
+        <nation>England</nation>
+        <picture>Ryan%20Mclaughlin.PNG</picture>
+    </Squad>
+    <Squad number= "No.44">
+        <name>Brad Smith</name>
+        <nation>Austrailia</nation>
+        <picture>Brad%20Smith.PNG</picture>
+    </Squad>
+</SquadList>

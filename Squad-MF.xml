@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SquadList>
+    <Squad number= "No.7">
+        <name>James Milner</name>
+        <nation>England</nation>
+        <picture>James%20Milner.PNG</picture>
+    </Squad>
+	<Squad number= "No.10">
+        <name>Philippe Coutinho</name>
+        <nation>Brazil</nation>
+        <picture>Philippe%20Coutinho.PNG</picture>
+    </Squad>
+	<Squad number= "No.14">
+        <name>Jordan Henderson</name>
+        <nation>England</nation>
+        <picture>Jordan%20Henderson.PNG</picture>
+    </Squad>
+	<Squad number= "No.20">
+        <name>Adam Lallana</name>
+        <nation>England</nation>
+        <picture>Adam%20Lallana.PNG</picture>
+    </Squad>
+    <Squad number= "No.21">
+        <name>Lucas Leiva</name>
+        <nation>Brazil</nation>
+        <picture>Lucas%20Leiva.PNG</picture>
+    </Squad>
+    <Squad number= "No.23">
+        <name>Emre Can</name>
+        <nation>Germany</nation>
+        <picture>Emre%20Can.PNG</picture>
+    </Squad>
+    <Squad number= "No.24">
+        <name>Joe Allen</name>
+        <nation>England</nation>
+        <picture>Joe%20Allen.PNG</picture>
+    </Squad>
+    <Squad number= "No.32">
+        <name>Cameron Brannagan</name>
+        <nation>England</nation>
+        <picture>Cameron%20Brannagan.PNG</picture>
+    </Squad>
+    <Squad number= "No.33">
+        <name>Jordan Ibe</name>
+        <nation>England</nation>
+        <picture>Jordan%20Ibe.PNG</picture>
+    </Squad>
+    <Squad number= "No.35">
+        <name>Kevin Stewart</name>
+        <nation>England</nation>
+        <picture>Kevin%20Stewart.PNG</picture>
+    </Squad>
+    <Squad number= "No.40">
+        <name>Ryan Kent</name>
+        <nation>England</nation>
+        <picture>Ryan%20Kent.PNG</picture>
+    </Squad>
+    <Squad number= "No.41">
+        <name>Jack Dunn</name>
+        <nation>England</nation>
+        <picture>Jack%20Dunn.PNG</picture>
+    </Squad>
+    <Squad number= "No.46">
+        <name>Jordan Rossiter</name>
+        <nation>England</nation>
+        <picture>Jordan%20Rossiter.PNG</picture>
+    </Squad>
+    <Squad number= "No.53">
+        <name>Joao Teixeira</name>
+        <nation>Portugal</nation>
+        <picture>Joao%20Teixeira.PNG</picture>
+    </Squad>
+    <Squad number= "No.54">
+        <name>Sheyi Ojo</name>
+        <nation>England</nation>
+        <picture>Sheyi%20Ojo.PNG</picture>
+    </Squad>
+    <Squad number= "No.68">
+        <name>Pedro Chirivella</name>
+        <nation>Spain</nation>
+        <picture>Pedro%20Chirivella.PNG</picture>
+    </Squad>
+</SquadList>

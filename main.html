@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>LIVERPOOL</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+    
+<!--xml, json파일 호출-->
+<script src="Graeme%20James%20Souness.xml.js"></script>
+<script src="Roy%20Evans.xml.js"></script>
+<script src="Gerard%20Houllier.xml.js"></script>
+<script src="Rafael%20Benitez.json.js"></script>
+<script src="Roy%20Hodgson.json.js"></script>
+<script src="Kenny%20Dalglish.json.js"></script>
+<script src="Brendan%20Rodgers.json.js"></script>
+<script src="Jurgen%20Klopp.json.js"></script>
+    
+<!--xml활용 부분 // [4]Squad에서 GK, DF, MF, FW를 클릭 시 효과 발생-->
+<script>
+    var count=0;
+    var Doc;
+    $(document).ready( function(){
+        $.ajax({
+            url : 'Squad-GK.xml',
+            type : 'get',
+            dataType : 'xml',
+            success : function(xmlDoc) {
+                Doc = xmlDoc;
+                count = $(xmlDoc).find('Squad').size();
+                displaySquad();
+            },
+            error : function(){
+                $('body').html('<div>Error</div>');
+            }
+        });
+    });
+    
+    function displaySquad(){
+        var i, tagList='', number='', name='', nation='';
+        tagList = '<li data-role="list-divider">List of GK(GoalKeeper)</li>';
+        if(count>0){
+            for(i=0; i<count; i++){
+                $list = $(Doc).find('Squad').eq(i);
+                tagList += '<li><a href="#"><img src="'+$list.find('picture').text() +'">';
+                tagList += '<p class="ui-li-aside">' + $list.attr('number')+'</p>';
+                tagList += '<h2>' + $list.find('name').text() + '</h2>';
+                tagList += '<p>Nationality : ' + $list.find('nation').text() + '</p></a></li>';
+            }
+        }
+        $('#Squad-GK').html(tagList);
+        $('#Squad-GK').listview('refresh');
+    }
+</script>
+
+<script>
+    var count=0;
+    var Doc;
+    $(document).ready( function(){
+        $.ajax({
+            url : 'Squad-DF.xml',
+            type : 'get',
+            dataType : 'xml',
+            success : function(xmlDoc) {
+                Doc = xmlDoc;
+                count = $(xmlDoc).find('Squad').size();
+                displaySquad1();
+            },
+            error : function(){
+                $('body').html('<div>Error</div>');
+            }
+        });
+    });
+    
+    function displaySquad1(){
+        var i, tagList='', number='', name='', nation='';
+        tagList = '<li data-role="list-divider">List of DF(Defender)</li>';
+        if(count>0){
+            for(i=0; i<count; i++){
+                $list = $(Doc).find('Squad').eq(i);
+                tagList += '<li><a href="#"><img src="'+$list.find('picture').text() +'">';
+                tagList += '<p class="ui-li-aside">' + $list.attr('number')+'</p>';
+                tagList += '<h2>' + $list.find('name').text() + '</h2>';
+                tagList += '<p>Nationality : ' + $list.find('nation').text() + '</p></a></li>';
+            }
+        }
+        $('#Squad-DF').html(tagList);
+        $('#Squad-DF').listview('refresh');
+    }
+</script>
+    
+<script>
+    var count=0;
+    var Doc;
+    $(document).ready( function(){
+        $.ajax({
+            url : 'Squad-MF.xml',
+            type : 'get',
+            dataType : 'xml',
+            success : function(xmlDoc) {
+                Doc = xmlDoc;
+                count = $(xmlDoc).find('Squad').size();
+                displaySquad2();
+            },
+            error : function(){
+                $('body').html('<div>Error</div>');
+            }
+        });
+    });
+    
+    function displaySquad2(){
+        var i, tagList='', number='', name='', nation='';
+        tagList = '<li data-role="list-divider">List of MF(Midfielder)</li>';
+        if(count>0){
+            for(i=0; i<count; i++){
+                $list = $(Doc).find('Squad').eq(i);
+                tagList += '<li><a href="#"><img src="'+$list.find('picture').text() +'">';
+                tagList += '<p class="ui-li-aside">' + $list.attr('number')+'</p>';
+                tagList += '<h2>' + $list.find('name').text() + '</h2>';
+                tagList += '<p>Nationality : ' + $list.find('nation').text() + '</p></a></li>';
+            }
+        }
+        $('#Squad-MF').html(tagList);
+        $('#Squad-MF').listview('refresh');
+    }
+</script>
+    
+<script>
+    var count=0;
+    var Doc;
+    $(document).ready( function(){
+        $.ajax({
+            url : 'Squad-FW.xml',
+            type : 'get',
+            dataType : 'xml',
+            success : function(xmlDoc) {
+                Doc = xmlDoc;
+                count = $(xmlDoc).find('Squad').size();
+                displaySquad3();
+            },
+            error : function(){
+                $('body').html('<div>Error</div>');
+            }
+        });
+    });
+    
+    function displaySquad3(){
+        var i, tagList='', number='', name='', nation='';
+        tagList = '<li data-role="list-divider">List of FW(Forward)</li>';
+        if(count>0){
+            for(i=0; i<count; i++){
+                $list = $(Doc).find('Squad').eq(i);
+                tagList += '<li><a href="#"><img src="'+$list.find('picture').text() +'">';
+                tagList += '<p class="ui-li-aside">' + $list.attr('number')+'</p>';
+                tagList += '<h2>' + $list.find('name').text() + '</h2>';
+                tagList += '<p>Nationality : ' + $list.find('nation').text() + '</p></a></li>';
+            }
+        }
+        $('#Squad-FW').html(tagList);
+        $('#Squad-FW').listview('refresh');
+    }
+</script>
+
+<!--Content부분의 빨간색 제목 부분을 클릭 시 영어를 한글로 번역 해 주는 jQuery문-->
+<script>
+    jQuery(document).ready(function(){
+        jQuery('div').click(function(){
+            jQuery('.change1').text('리버풀에 관한 목차');
+        });
+    });
+</script>
+    
+<script>
+    jQuery(document).ready(function(){
+        jQuery('div').click(function(){
+            jQuery('.change2').text('리버풀의 역사');
+        });
+    });
+</script>
+    
+<script>
+    jQuery(document).ready(function(){
+        jQuery('div').click(function(){
+            jQuery('.change3').text('경기장과 우승');
+        });
+    });
+</script>
+    
+<script>
+    jQuery(document).ready(function(){
+        jQuery('div').click(function(){
+            jQuery('.change4').text('감독 목록');
+        });
+    });
+</script>
+    
+<script>
+    jQuery(document).ready(function(){
+        jQuery('div').click(function(){
+            jQuery('.change5').text('선수단');
+        });
+    });
+</script>
+
+<!--선택자를 이용한 css 효과-->
+<script>
+	$(document).ready(function() {
+        $('img[src$="PNG"]').css('border', 'solid thick red');
+        $('p').prev().css('color', 'green');
+        $('h3').next().css('color' , 'blue');
+        $('ul > li').css('border', 'solid thick black');
+        $('div h4').css('border', 'solid thick orange');
+        $('div p').css('color', 'purple');
+    });
+</script>
+
+<!--Content부분의 Style속성-->
+<style>
+    #contenth2{
+        color: red;
+        font-size: 50px;
+    }
+</style>
+</head>
+<body>
+<!--Main-->
+	<div data-role="page" id="Main" data-add-back-btn="true">
+        <div data-role="header" data-backbtn="false" data-position="fixed" data-theme="b">
+            <h1>LIVERPOOL</h1>
+        </div>    
+        
+        <div data-role="content">
+        <h2 id="contenth2" class="change1" align="center">Table of contents for Liverpool</h2>
+            <a href="#History of Liverpool" data-role="button" data-corners="false" data-transition="flip" data-icon="search" data-iconpos="right" data-theme="e">[1]History of Liverpool</a>
+            <a href="#Stadium and Victory" data-role="button" data-corners="false" data-transition="flip" data-icon="search" data-iconpos="right" data-theme="e">[2]Stadium and Victory</a>
+            <a href="#Supervision" data-role="button" data-corners="false" data-transition="flip" data-icon="search" data-iconpos="right" data-theme="e">[3]Supervision</a>
+            <a href="#Squad" data-role="button" data-corners="false" data-transition="flip" data-icon="search" data-iconpos="right" data-theme="e">[4]Squad</a>
+            <a href="#" data-role="button" data-corners="false"><img src="Liverpool.PNG"></a>
+        </div>
+
+        <div data-role="footer" class="ui-bar" data-position="fixed" data-theme="b">
+            <div data-role="controlgroup" >
+                <a href="#History of Liverpool" data-transition="flip">History of Liverpool</a>
+                <a href="#Stadium and Victory" data-transition="flip">Stadium and Victory</a>
+                <a href="#Supervision" data-transition="flip">Supervision</a>
+                <a href="#Squad" data-transition="flip">Squad</a>
+            </div>
+        </div>
+    </div>
+    
+<!--[1]History of Liverpool-->
+    <div data-role="page" id="History of Liverpool" data-add-back-btn="true">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <h1>History of Liverpool</h1>
+            <a href="main.html" class="ui-btn-right" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        
+        <div data-role="content">
+            <h2 id="contenth2" class="change2" align="center">History of Liverpool</h2>
+            <ul data-role="listview" data-theme="e">
+                <li><a href="#HoL-1" data-transition="fade"><img src="Anfield1.PNG">1) Hometown</a></li>
+                <li><a href="#HoL-2" data-transition="fade"><img src="Establishment.PNG">2) Establishment</a></li>
+                <li><a href="#HoL-3" data-transition="fade"><img src="Supporters.PNG">3) Supporters</a></li>
+                <li><a href="#HoL-4" data-transition="fade"><img src="Uniform.PNG">4) Uniform</a></li>
+                <li><a href="#HoL-5" data-transition="fade"><img src="Getoline.PNG">5) Symbol<span class="ui-li-count">HOT</span></a></li>
+                <li><a href="#HoL-6" data-transition="fade"><img src="Heyday.PNG">6) Heyday</a></li>
+                <li><a href="#HoL-7" data-transition="fade"><img src="Present.PNG">7) Present</a></li>
+            </ul>
+        </div>
+        
+        <div data-role="footer" class="ui-bar" data-position="fixed" data-theme="b">
+            <div data-role="controlgroup">
+                <a href="#History of Liverpool" data-transition="flip">History of Liverpool</a>
+                <a href="#Stadium and Victory" data-transition="flip">Stadium and Victory</a>
+                <a href="#Supervision" data-transition="flip">Supervision</a>
+                <a href="#Squad" data-transition="flip">Squad</a>
+            </div>
+        </div>
+    </div>
+    
+<!--[1]-(1)-->
+    <div data-role="page" id="HoL-1" data-add-back-btn="true">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <h1>History of Liverpool - Hometown</h1>
+            <a href="main.html" class="ui-btn-right" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        
+        <div data-role="content">
+            <div class="ui-bar ui-bar-e">Hometown</div><br>
+            <div class="ui-body ui-body-d">
+                <h3><img src="Anfield1.PNG"><br>Anfield</h3>
+                <p>리버풀의 정식명칭은 Liverpool Football Club이다.
+                    리버풀 유니폼에 보면 LFC라고 쓰여져 있는 게 바로 이 뜻이다. 
+                    리버풀의 연고지는 잉글랜드 머지사이드주 리버풀이고 홈구장으로는 안필드를 사용하고 있다.</p>
+            </div>
+        </div>
+        
+        <div data-role="footer" class="ui-bar" data-position="fixed" data-theme="b">
+            <div data-role="controlgroup">
+                <a href="#History of Liverpool" data-transition="flip">History of Liverpool</a>
+                <a href="#Stadium and Victory" data-transition="flip">Stadium and Victory</a>
+                <a href="#Supervision" data-transition="flip">Supervision</a>
+                <a href="#Squad" data-transition="flip">Squad</a>
+            </div>
+        </div>
+    </div>
+    
+<!--[1]-(2)-->
+    <div data-role="page" id="HoL-2" data-add-back-btn="true">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <h1>History of Liverpool - Establishment</h1>            
+            <a href="main.html" class="ui-btn-right" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        
+        <div data-role="content">
+            <div class="ui-bar ui-bar-e">John Houlding</div><br>
+            <div class="ui-body ui-body-d">
+                <h3><img src="Establishment.PNG"><br>Establishment</h3>
+                <p>리버풀은 안필드의 임대인이었던 존 하울딩이 창단했다.
+                    1891년 안필드 구장의 전 지분을 매입하는걸로 시작을 해서
+                    1892년 안필드 경기장에 리버풀이 탄생하게 되었다.
+                    그 이후 하울딩이 스코틀랜드에서 선수들을 영입하고
+                    지역리그에 참가하자마자 우승을 하고 2부리그에서도
+                    바로 또 우승을 하면서 1부 리그까지 단숨에 올라갔다.</p>
+            </div>
+        </div>
+        
+        <div data-role="footer" class="ui-bar" data-position="fixed" data-theme="b">
+            <div data-role="controlgroup">
+                <a href="#History of Liverpool" data-transition="flip">History of Liverpool</a>
+                <a href="#Stadium and Victory" data-transition="flip">Stadium and Victory</a>
+                <a href="#Supervision" data-transition="flip">Supervision</a>
+                <a href="#Squad" data-transition="flip">Squad</a>
+            </div>
+        </div>
+    </div>
+            
+<!--[1]-(3)-->
+    <div data-role="page" id="HoL-3" data-add-back-btn="true">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <h1>History of Liverpool - Supporters</h1>            
+            <a href="main.html" class="ui-btn-right" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        
+        <div data-role="content">
+            <div class="ui-bar ui-bar-e">Suppoerters</div><br>
+            <div class="ui-body ui-body-d">
+                <h3><img src="Supporters.PNG"><br>Kop</h3>
+                <p>리버풀이 유명한 것은 바로 열정적인 서포터즈 때문이다.
+                    'The Kop' 이라 불리는 리버풀의 서포터즈들은
+                    어느 구단의 팬들보다 열정적인 응원을 하는 팬들로 유명하다.
+                    리버풀에서 뛰었던 선수들은 팬들의 열정적은 응원을
+                    잊지 못한다고 한다.</p>
+            </div>
+        </div>
+        
+        <div data-role="footer" class="ui-bar" data-position="fixed" data-theme="b">
+            <div data-role="controlgroup">
+                <a href="#History of Liverpool" data-transition="flip">History of Liverpool</a>
+                <a href="#Stadium and Victory" data-transition="flip">Stadium and Victory</a>
+                <a href="#Supervision" data-transition="flip">Supervision</a>
+                <a href="#Squad" data-transition="flip">Squad</a>
+            </div>
+        </div>
+    </div>
+    
+<!--[1]-(4)-->
+    <div data-role="page" id="HoL-4" data-add-back-btn="true">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <h1>History of Liverpool - Uniform</h1>            
+            <a href="main.html" class="ui-btn-right" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        
+        <div data-role="content">
+            <div class="ui-bar ui-bar-e">Uniform</div><br>
+            <div class="ui-body ui-body-d">
+                <h3><img src="Uniform.PNG"><br>Color : RED</h3>
+                <p>
+                    리버풀의 홈 유니폼 색깔은 원래 레드 앤 화이트였으나 1960년대에는 올 레드로 바뀌었다. 리버풀의 엠블럼은 창단후 변화가 거의 없었지만 1989년 힐즈브러 참사를 기리기 위해 엠블럼의 좌우에 불꽃을 집어넣어 현재에 이르고 있다.</p>
+            </div>
+        </div>
+        
+        <div data-role="footer" class="ui-bar" data-position="fixed" data-theme="b">
+            <div data-role="controlgroup">
+                <a href="#History of Liverpool" data-transition="flip">History of Liverpool</a>
+                <a href="#Stadium and Victory" data-transition="flip">Stadium and Victory</a>
+                <a href="#Supervision" data-transition="flip">Supervision</a>
+                <a href="#Squad" data-transition="flip">Squad</a>
+            </div>
+        </div>
+    </div>
+
+<!--[1]-(5)-->
+    <div data-role="page" id="HoL-5" data-add-back-btn="true">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <h1>History of Liverpool - Symbol</h1>            
+            <a href="main.html" class="ui-btn-right" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        
+        <div data-role="content">
+            <div class="ui-bar ui-bar-e">Symbol</div><br>
+            <div class="ui-body ui-body-d">
+                <h3><img src="Getoline.PNG"><br>제-토라인(Gerrard-Torres Line)</h3>
+                <p>               
+                    리버풀에서 제라드와 토레스의 공격조합을 이루는 말로 리버풀팬들 뿐만 아니라 전세계 축구팬이 인정하는 조합이다. 당시 제라드는 최고의 미드필더, 토레스는 최고의 공격수라는 찬사를 들었다.</p>
+            </div>
+        </div>
+        
+        <div data-role="footer" class="ui-bar" data-position="fixed" data-theme="b">
+            <div data-role="controlgroup">
+                <a href="#History of Liverpool" data-transition="flip">History of Liverpool</a>
+                <a href="#Stadium and Victory" data-transition="flip">Stadium and Victory</a>
+                <a href="#Supervision" data-transition="flip">Supervision</a>
+                <a href="#Squad" data-transition="flip">Squad</a>
+            </div>
+        </div>
+    </div>
+    
+<!--[1]-(6)-->
+    <div data-role="page" id="HoL-6" data-add-back-btn="true">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <h1>History of Liverpool - Heyday</h1>            
+            <a href="main.html" class="ui-btn-right" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        
+        <div data-role="content">
+            <div class="ui-bar ui-bar-e">Heyday</div><br>
+            <div class="ui-body ui-body-d">
+                <h3><img src="Heyday.PNG"><br>Bob Paisley</h3>
+                <p>
+                    리버풀의 최고 전성기는 '페이즐리' 라는 감독이
+                    리버풀의 감독을 맡게 되면서부터 라고 할 수 있다.
+                    페이즐리는 감독직을 맡고 두 시즌만에 UEFA 우승컵을 들어올렸고
+                    다음 시즌에도 2연속 리그 우승을 차지했다.
+                    클럽 사상 최초로 유러피언컵(현재 챔스)우승도 하고
+                    FA컵 결승까지 진출했다.
+                    당시 리그는 총 42경기 였는데 단 16골만 실점하는
+                    엄청난 수비력을 보여주기도 했다.</p>
+            </div>
+        </div>
+        
+        <div data-role="footer" class="ui-bar" data-position="fixed" data-theme="b">
+            <div data-role="controlgroup">
+                <a href="#History of Liverpool" data-transition="flip">History of Liverpool</a>
+                <a href="#Stadium and Victory" data-transition="flip">Stadium and Victory</a>
+                <a href="#Supervision" data-transition="flip">Supervision</a>
+                <a href="#Squad" data-transition="flip">Squad</a>
+            </div>
+        </div>
+    </div>
+    
+<!--[1]-(7)-->
+    <div data-role="page" id="HoL-7" data-add-back-btn="true">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <h1>History of Liverpool - Present</h1>            
+            <a href="main.html" class="ui-btn-right" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        
+        <div data-role="content">
+            <div class="ui-bar ui-bar-e">Present</div><br>
+            <div class="ui-body ui-body-d">
+                <h3><img src="Klopp1.PNG"><br>Jurgen Klopp</h3>
+                <p>               
+                    현재까지도 계속 부진을 면치 못하는 리버풀이지만
+                    위르겐 클롭이라는 감독이 부임하면서
+                    점점 분위기가 바뀌어 가고 있는 리버풀이다.
+                    예전의 빅클럽이라는 명성,명예를 되찾을 수 있는 날이
+                    얼마 머지 않았다고 생각된다.</p>
+            </div>
+        </div>
+        
+        <div data-role="footer" class="ui-bar" data-position="fixed" data-theme="b">
+            <div data-role="controlgroup">
+                <a href="#History of Liverpool" data-transition="flip">History of Liverpool</a>
+                <a href="#Stadium and Victory" data-transition="flip">Stadium and Victory</a>
+                <a href="#Supervision" data-transition="flip">Supervision</a>
+                <a href="#Squad" data-transition="flip">Squad</a>
+            </div>
+        </div>
+    </div>
+    
+<!--[2]Stadium and Victory-->
+    <div data-role="page" id="Stadium and Victory" data-add-back-btn="true">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <h1>Stadium and Victory</h1>
+            <a href="main.html" class="ui-btn-right" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        
+        <div data-role="content">
+            <div data-role="collapsible-set" data-theme="e" data-content-theme="d">
+                <h2 id="contenth2" class="change3" align="center">Stadium and Victory</h2>
+                <div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="d">
+                    <h3>Stadium</h3>
+                    <div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="d">
+                        <h4>Explain</h4>
+                        <p><img src="Anfield2.PNG"><br>
+                        영국 잉글랜드 리버풀(Liverpool)에 있는 축구 경기장으로, 리버풀 FC(Liverpool FC)의 전용 구장이다. 
+                            1884년에 건설되었으며, 45,276명을 수용할 수 있다. 
+                            최고 관중 기록은 1952년 리버풀과 울버햄프턴 원더러스 팀의 경기로, 61,905명이 입장하였다.
+                            UEFA가 공인한 경기장으로 국제경기를 치를 수 있다. 부대시설로는 영화관, 리버풀 축구 박물관 등이 있다.</p>
+                    </div>
+                    <div data-role="collapsible" data-theme="e" data-content-theme="d">
+                        <h4>Extension</h4>
+                        <p><img src="Anfield%20extension.PNG"><br>
+                            리버풀이 2014년도 말 증축에 관한 공식 승인을 얻어 증축 공사를 시작했다. 
+                            리버풀은 오래 전부터 안필드를 증축시키길 원했었고, 
+                            계획이 현실화 되면서 45,500명의 관중이 앉을 수 있는 안필드 내 좌석을 59,000개까지 늘이기로 했다.
+                            이 증축 사업은 2016~2017 시즌이 시작될 때 쯤이면 끝날 것으로 보이고, 
+                            좌석 이외에도 기자회견장과 연회장, 클럽 샵 주차 시설 등이 더 추가 될 예정이다. 
+                            리버풀 시의회에 따르면 이번 안필드 증축 사업으로 유럽대항전 결승전 유치에 대한 기대를 하고 있다고 한다.
+                            UEFA는 챔피언스리그나 유로파리그의 결승전 유치 자격 경기장으로 최소 5만명을 수용할 수 있는 경기장을 원하고 있기 때문이다.</p>
+                    </div>
+                </div>
+            
+                <div data-role="collapsible" data-theme="e" data-content-theme="d">
+                        <h3>Victory</h3>
+                    <div data-role="collapsible" data-collapsed="false" data-   theme="e" data-content-theme="d">
+                        <h4>League Champions</h4>
+                        <p><img src="League.PNG"><br>
+                            <b>우승 횟수-18회</b><br>
+                            1900-01, 1905-06, 1921-22, 1946-47, 1963-64, 1965-66, 1972-73, 1975-76, 
+                            1976-77, 1978-79, 1979-80, 1981-82, 1982-83, 1983-84, 1985-85, 1987-88, 1989-90<br>
+                            2010-11시즌 맨체스터 유나이티드가 19번째 리그 우승을 함으로써 최다 리그우승 타이틀을 맨체스터 유나이티드에게 뺏겼다.
+                            1992년 프리미어리그 출범 이후 우승한 적이 없다.
+                        </p>
+                    </div>
+                    <div data-role="collapsible" data-theme="e" data-content-theme="d">
+                        <h4>FA Cup</h4>
+                        <p><img src="FACup.PNG"><br>
+                            <b>우승 횟수-7회</b><br>
+                            1964-65, 1973-74, 1985-86, 1988-89, 1991-92, 2000-01,
+                            2005-06<br>
+                            FA컵과는 많은 인연이 없었다.
+                        </p>
+                    </div>
+                    <div data-role="collapsible" data-theme="e" data-content-theme="d">
+                        <h4>Champions League</h4>
+                        <p><img src="Champions%20League.PNG"><br>
+                            <b>우승 횟수-5회</b><br>
+                            1976-77, 1977-78, 1980-81, 1983-84, 2004-05<br>
+                            리버풀의 자부심, 챔피언스리그 5회 타이틀은 EPL에서 단연 최고다.
+                            그중에 이스탄불에서 열린 2004-05의 결승전, '이스탄불의 기적'은 절대 잊지 못할 것이다.
+                        </p>
+                    </div>
+                    <div data-role="collapsible" data-theme="e" data-content-theme="d">
+                        <h4>League Cup</h4>
+                        <p><img src="Carling%20Cup.PNG"><br>
+                            <b>우승 횟수-8회</b><br>
+                            1980-81, 1981-82, 1982-83, 1983-84, 1994-95, 2000-01,
+                            2002-03, 2011-12<br>
+                            칼링컵으로 더욱 익숙한 리그컵위너스다. 
+                            현재는 타이틀 스폰서가 바뀌면서 캐피털 원 컵으로 명칭이 바뀌었다. 1-4부리그까지 총 출동하는 컵대회로써 리버풀이 디펜딩 챔피언이다.
+                        </p>
+                    </div>
+                    <div data-role="collapsible" data-theme="e" data-content-theme="d">
+                        <h4>UEFA Cup</h4>
+                        <p><img src="UEFA%20Cup.PNG"><br>
+                            <b>우승 횟수-3회</b><br>
+                            1972-73, 1975-76, 2000-01<br>
+                            유로파리그로, 챔피언스 바로 아래 단계인 UEFA컵이다.
+                            매우 권위있는 컵대회이다.
+                        </p>
+                    </div>
+                    <div data-role="collapsible" data-theme="e" data-content-theme="d">
+                        <h4>European Super Cup</h4>
+                        <p><img src="European%20Super%20Cup.PNG"><br>
+                            <b>우승 횟수-3회</b><br>
+                            1977, 2001, 2005<br>
+                            챔피언스리그 우승팀과 UEFA컵 우승팀의 대결이다.
+                        </p>
+                    </div>
+                    <div data-role="collapsible" data-theme="e" data-content-theme="d">
+                        <h4>FA Charity Shield(=FA Community shield)</h4>
+                        <p><img src="FA%20Charity%20Shield.PNG"><br>
+                            <b>우승 횟수-15회</b><br>
+                            1964, 1965, 1966, 1974, 1976, 1977, 1979, 1980, 1982,
+                            1986, 1988, 1989, 1990, 2001, 2006<br>
+                            현 커뮤니티실드다. 프리미어리그 우승티과 FA컵 우승팀이 시즌 개막전에 벌이는 매치이다.
+                        </p>
+                    </div>
+                </div>
+                <a href="#" data-role="button" data-corners="false"><img src="Victory.PNG"></a>
+            </div>
+        </div>
+        
+        <div data-role="footer" class="ui-bar" data-position="fixed" data-theme="b">
+            <div data-role="controlgroup">
+                <a href="#History of Liverpool" data-transition="flip">History of Liverpool</a>
+                <a href="#Stadium and Victory" data-transition="flip">Stadium and Victory</a>
+                <a href="#Supervision" data-transition="flip">Supervision</a>
+                <a href="#Squad" data-transition="flip">Squad</a>
+            </div>
+        </div>
+    </div>
+    
+<!--[3]Supervision-->
+    <div data-role="page" id="Supervision" data-add-back-btn="true">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <h1>Supervision</h1>
+            <a href="main.html" class="ui-btn-right" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        
+        <div data-role="content">
+            <h2 id="contenth2" class="change4" align="center">List of Supervision</h2>
+            <a href="#" data-role="button" id="btn1" data-theme="e">Graeme James Souness</a>
+            <a href="#" data-role="button" id="btn2" data-theme="e">Roy Quentin Echlin Evans</a>
+            <a href="#" data-role="button" id="btn3" data-theme="e">Gerard Houllier</a>
+            <a href="#" data-role="button" id="btn4" data-theme="e">Rafael Benitez</a>
+            <a href="#" data-role="button" id="btn5" data-theme="e">Roy Hodgson</a>
+            <a href="#" data-role="button" id="btn6" data-theme="e">Kenny Dalglish</a>
+            <a href="#" data-role="button" id="btn7" data-theme="e">Brendan Rodgers</a>
+            <a href="#" data-role="button" id="btn8" data-theme="e">Jurgen Klopp</a>
+            <ul data-role="listview" id="SupervisionList" data-inset="true" data-theme="a">
+                <li id="item">Before load information of supervision</li>
+            </ul>
+        </div>
+        
+        <div data-role="footer" class="ui-bar" data-position="fixed" data-theme="b">
+            <div data-role="controlgroup">
+                <a href="#History of Liverpool" data-transition="flip">History of Liverpool</a>
+                <a href="#Stadium and Victory" data-transition="flip">Stadium and Victory</a>
+                <a href="#Supervision" data-transition="flip">Supervision</a>
+                <a href="#Squad" data-transition="flip">Squad</a>
+            </div>
+        </div>
+    </div>
+    
+<!--[4]Squad-->
+    <div data-role="page" id="Squad" data-add-back-btn="true">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <h1>Squad</h1>
+            <a href="main.html" class="ui-btn-right" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        
+        <div data-role="content">
+            <h2 id="contenth2" class="change5" align="center">Squad</h2>
+            <ul data-role="listview" data-theme="e">
+                <li data-role="listdivider" data-transition="fade">GK(GoalKeeper)</li>
+                <li><a href="#SquadGK" data-transition="fade">Click to change page => GK</a></li><br>
+                <li data-role="listdivider">DF(Defender)(</li>
+                <li><a href="#SquadDF" data-transition="fade">Click to change page => DF</a></li><br>
+                <li data-role="listdivider">MF(Midfielder)</li>
+                <li><a href="#SquadMF" data-transition="fade">Click to change page => MF</a></li><br>
+                <li data-role="listdivider">FW(Forward)</li>
+                <li><a href="#SquadFW" data-transition="fade">Click to change page => FW</a></li><br>
+            </ul>
+            <a href="#" data-role="button" data-corners="false"><img src="Formation.PNG"><br>EPL 11ROUND CHEALSEA경기에서 승리한 Best Formation</a>
+        </div>
+        
+        <div data-role="footer" class="ui-bar" data-position="fixed" data-theme="b">
+            <div data-role="controlgroup">
+                <a href="#History of Liverpool" data-transition="flip">History of Liverpool</a>
+                <a href="#Stadium and Victory" data-transition="flip">Stadium and Victory</a>
+                <a href="#Supervision" data-transition="flip">Supervision</a>
+                <a href="#Squad" data-transition="flip">Squad</a>
+            </div>
+        </div>
+    </div>
+    
+<!--[4]-GK-->
+    <div data-role="page" id="SquadGK" data-add-back-btn="true">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <h1>Squad-GK</h1>
+            <a href="main.html" class="ui-btn-right" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        <br>
+        <div data-role="content">
+            <ul data-role="listview" id="Squad-GK" data-divider-theme="e">
+            </ul>
+        </div>
+        
+        <div data-role="footer" class="ui-bar" data-position="fixed" data-theme="b">
+            <div data-role="controlgroup">
+                <a href="#History of Liverpool" data-transition="flip">History of Liverpool</a>
+                <a href="#Stadium and Victory" data-transition="flip">Stadium and Victory</a>
+                <a href="#Supervision" data-transition="flip">Supervision</a>
+                <a href="#Squad" data-transition="flip">Squad</a>
+            </div>
+        </div>
+    </div>
+    
+<!--[4]-DF-->
+    <div data-role="page" id="SquadDF" data-add-back-btn="true">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <h1>Squad-GK</h1>
+            <a href="main.html" class="ui-btn-right" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        
+        <div data-role="content">
+            <ul data-role="listview" id="Squad-DF" data-divider-theme="e">
+            </ul>
+        </div>
+        
+        <div data-role="footer" class="ui-bar" data-position="fixed" data-theme="b">
+            <div data-role="controlgroup">
+                <a href="#History of Liverpool" data-transition="flip">History of Liverpool</a>
+                <a href="#Stadium and Victory" data-transition="flip">Stadium and Victory</a>
+                <a href="#Supervision" data-transition="flip">Supervision</a>
+                <a href="#Squad" data-transition="flip">Squad</a>
+            </div>
+        </div>
+    </div>
+    
+<!--[4]-MF-->
+    <div data-role="page" id="SquadMF" data-add-back-btn="true">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <h1>Squad-GK</h1>
+            <a href="main.html" class="ui-btn-right" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        <br>
+        <div data-role="content">
+            <ul data-role="listview" id="Squad-MF" data-divider-theme="e">
+            </ul>
+        </div>
+        
+        <div data-role="footer" class="ui-bar" data-position="fixed" data-theme="b">
+            <div data-role="controlgroup">
+                <a href="#History of Liverpool" data-transition="flip">History of Liverpool</a>
+                <a href="#Stadium and Victory" data-transition="flip">Stadium and Victory</a>
+                <a href="#Supervision" data-transition="flip">Supervision</a>
+                <a href="#Squad" data-transition="flip">Squad</a>
+            </div>
+        </div>
+    </div>
+    
+<!--[4]-FW-->
+    <div data-role="page" id="SquadFW" data-add-back-btn="true">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <h1>Squad-GK</h1>
+            <a href="main.html" class="ui-btn-right" data-icon="home" data-iconpos="notext"></a>
+        </div>
+        <br>
+        <div data-role="content">
+            <ul data-role="listview" id="Squad-FW" data-divider-theme="e">
+            </ul>
+        </div>
+        
+        <div data-role="footer" class="ui-bar" data-position="fixed" data-theme="b">
+            <div data-role="controlgroup">
+                <a href="#History of Liverpool" data-transition="flip">History of Liverpool</a>
+                <a href="#Stadium and Victory" data-transition="flip">Stadium and Victory</a>
+                <a href="#Supervision" data-transition="flip">Supervision</a>
+                <a href="#Squad" data-transition="flip">Squad</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

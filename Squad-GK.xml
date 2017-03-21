@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SquadList>
+    <Squad number= "No.1">
+        <name>Loris Karius</name>
+        <nation>Germany</nation>
+        <picture>Loris%20Karius.PNG</picture>
+    </Squad>
+	<Squad number= "No.22">
+        <name>Simon Mignolet</name>
+        <nation>Belgium</nation>
+        <picture>Simon%20Mignolet.PNG</picture>
+    </Squad>
+	<Squad number= "No.34">
+        <name>Adam Bogdan</name>
+        <nation>Hungary</nation>
+        <picture>Adam%20Bogdan.PNG</picture>
+    </Squad>
+	<Squad number= "No.52">
+        <name>Danny Ward</name>
+        <nation>England</nation>
+        <picture>Danny%20Ward.PNG</picture>
+    </Squad>
+</SquadList>
